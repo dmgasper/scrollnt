@@ -22,30 +22,14 @@
 .App-body {
   background-color: #52555b;
   height: 95vh;
-  padding-inline-start: 1vw;
-  padding-inline-end: 1vw;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: center;
 }
 
 .App-link {
   color: #61dafb;
-}
-
-.ScrollNT-embed {
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  height: 90vh;
-  width: 40vw;
-  align-items: flex-start;
-}
-
-.Qualtrics-embed {
-  height: 90vh;
-  width: 50vw;
 }
 
 @keyframes App-logo-spin {
