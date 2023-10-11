@@ -13,4 +13,5 @@
   height: 4vh;
   width: max-content;
   font-size: calc(10px + 2vmin);
+  border-radius: 10px;
 }

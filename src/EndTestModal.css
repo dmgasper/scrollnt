@@ -26,8 +26,20 @@
   font-size: 2rem;
 }
 
-.buttons {
+.button-row {
   flex-direction: row;
-  width: 50%;
-  justify-items: stretch;
+  width: 100%;
+  margin: 5%;
+}
+
+.End-button {
+  margin-left: 15%;
+  margin-right: 15%;
+  font-size: calc(10px + 2vmin);
+  border-radius: 10px;
+}
+
+.Blue-border {
+  border-width: 10px;
+  border-color: blue;
 }

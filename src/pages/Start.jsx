@@ -10,10 +10,10 @@ const Start = ({ setPage, setIsExperimentGroup }) => {
   return (
     <div className="App-body">
       <button className="Start-btn" onClick={() => launchTest(false)}>
-        Control group
+        Don't display popups
       </button>
       <button className="Start-btn" onClick={() => launchTest(true)}>
-        Experiment group
+        Display social media with popups
       </button>
     </div>
   );

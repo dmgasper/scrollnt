@@ -3,6 +3,7 @@ import { useState } from "react";
 import "./App.css";
 import Header from "./Header";
 import Start from "./pages/Start";
+import End from "./pages/End";
 import Main from "./pages/Main";
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
             setIsExperimentGroup={setIsExperimentGroup}
           />
         )}
+        {page === "End" && <End />}
       </body>
     </div>
   );

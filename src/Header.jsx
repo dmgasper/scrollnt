@@ -7,12 +7,14 @@ const Header = ({ page, setPage }) => {
 
   return (
     <>
-      {showModal && <EndTestModal onClose={() => setShowModal(false)} />}
+      {showModal && (
+        <EndTestModal setPage={setPage} onClose={() => setShowModal(false)} />
+      )}
       <span className="Header-body">
-        <text className="Logo">Attention Test</text>
+        <text className="Logo">Attention Activity</text>
         {page === "Start" && (
           <text className="Center" color="white">
-            Be sure that participants do not see this screen
+            Select a button below to continue
           </text>
         )}
         {page === "Main" && (
