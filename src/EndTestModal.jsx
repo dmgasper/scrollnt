@@ -1,5 +1,5 @@
 import { createPortal } from "react-dom";
-import "./EndTestModal.css";
+import "./Modal.css";
 
 const EndTestModal = ({ setPage, onClose }) =>
   createPortal(

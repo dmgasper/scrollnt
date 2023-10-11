@@ -12,9 +12,11 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   height: 90vh;
   width: 40vw;
+  pointer-events: none;
 }
 
 .Qualtrics-embed {
   height: 90vh;
   width: 50vw;
+  pointer-events: none;
 }
