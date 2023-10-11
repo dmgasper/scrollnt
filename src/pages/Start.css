@@ -1,0 +1,8 @@
+.Start-btn {
+  margin: 5vw;
+  background-color: blue;
+  height: 10vh;
+  width: 10vw;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
