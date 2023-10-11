@@ -1,0 +1,16 @@
+.Header-body {
+  width: 100vw;
+}
+
+.Logo {
+  float: inline-start;
+  padding-inline-start: 10px;
+}
+
+.Button {
+  background-color: aliceblue;
+  border: none;
+  height: 4vh;
+  width: max-content;
+  font-size: calc(10px + 2vmin);
+}

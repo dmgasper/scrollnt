@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import "./App.css";
+import Header from "./Header";
 import Start from "./pages/Start";
 import Main from "./pages/Main";
 
@@ -10,15 +11,11 @@ const App = () => {
 
   return (
     <div className="App">
-      <header className="App-header"></header>
-      <body className="App-body">
-        {page === "Main" && (
-          <Main
-            page={page}
-            setPage={setPage}
-            isExperimentGroup={isExperimentGroup}
-          />
-        )}
+      <header className="App-header clipping-container">
+        <Header page={page} setPage={setPage} />
+      </header>
+      <body id="App-Main" className="App-body">
+        {page === "Main" && <Main isExperimentGroup={isExperimentGroup} />}
         {page === "Start" && (
           <Start
             setPage={setPage}
