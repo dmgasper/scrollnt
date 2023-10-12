@@ -30,14 +30,7 @@ const SocialFeedSimulator = () => {
   };
 
   return (
-    <div
-    // style={{
-    //   flexDirection: "row",
-    //   alignItems: "center",
-    //   width: "100%",
-    //   height: "100%",
-    // }}
-    >
+    <div>
       <Image
         source={require("./res/images/header.png")}
         resizeMode="cover"
@@ -48,7 +41,7 @@ const SocialFeedSimulator = () => {
         overscanCount={2}
         height={window.innerHeight * 0.7}
         width={window.innerWidth * 0.35}
-        itemCount={10}
+        itemCount={114}
         itemSize={(index) =>
           (posts[index].height * 0.35 * window.innerWidth) / posts[index].width
         }

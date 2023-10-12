@@ -36,19 +36,7 @@ const Main = ({ isExperimentGroup, setTrackMouse }) => {
       <div id="Main-body" className="Main-body" ref={elementRef}>
         <MouseTracker />
         <div onClick={() => setShowPopup(false)}>
-          {showPopup && (
-            <img
-              alt=""
-              src={dialog}
-              className="Popup"
-              // style={
-              //   {
-              //     // width: window.innerWidth * 0.3,
-              //     // height: (517 * 0.3 * window.innerWidth) / 380,
-              //   }
-              // }
-            />
-          )}
+          {showPopup && <img alt="" src={dialog} className="Popup" />}
           <SocialFeedSimulator className="ScrollNT-embed" />
         </div>
         <div
