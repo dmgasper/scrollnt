@@ -12,11 +12,26 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   height: 90vh;
   width: 40vw;
-  pointer-events: none;
 }
 
 .Qualtrics-embed {
   height: 90vh;
   width: 50vw;
-  pointer-events: none;
+}
+
+.Bootleg-mouse-tracker {
+  position: fixed;
+  width: 95vw;
+  height: 90vh;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.Bootleg-mouse-tracker:hover {
+  pointer-events: auto;
+  position: fixed;
+  width: 95vw;
+  height: 90vh;
+  z-index: 100;
+  background-color: rgba(243, 6, 6, 0.1);
 }
