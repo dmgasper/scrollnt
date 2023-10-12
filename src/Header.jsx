@@ -2,13 +2,19 @@ import "./Header.css";
 import EndTestModal from "./EndTestModal";
 import { useState } from "react";
 
-const Header = ({ page, setPage }) => {
+const Header = ({ page, setPage, setTrackMouse }) => {
   const [showModal, setShowModal] = useState(false);
 
   return (
     <>
       {showModal && (
-        <EndTestModal setPage={setPage} onClose={() => setShowModal(false)} />
+        <EndTestModal
+          setPage={setPage}
+          onClose={() => {
+            setShowModal(false);
+            setTrackMouse(true);
+          }}
+        />
       )}
       <span className="Header-body">
         <text className="Logo">Attention Activity</text>
@@ -18,7 +24,13 @@ const Header = ({ page, setPage }) => {
           </text>
         )}
         {page === "Main" && (
-          <button onClick={() => setShowModal(true)} className="Button">
+          <button
+            onClick={() => {
+              setShowModal(true);
+              setTrackMouse(false);
+            }}
+            className="Button"
+          >
             Click here when Qualtrics is Submitted
           </button>
         )}
