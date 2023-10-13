@@ -11,8 +11,6 @@ const SocialFeedSimulator = () => {
   const footerHeight = ((window.innerWidth * 0.35) / 1125) * 159;
 
   const Row = ({ index, style }) => {
-    const p = posts[index].width / posts[index].height;
-
     return (
       <Image style={style} source={posts[index].image} resizeMode="cover" />
     );
