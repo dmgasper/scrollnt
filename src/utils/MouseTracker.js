@@ -15,7 +15,7 @@ const MouseTracker = () => {
     }, 250);
 
     return () => clearInterval(interval);
-  }, [mousePosition]);
+  });
 
   useEffect(() => {
     const handleWindowMouseMove = (event) => {

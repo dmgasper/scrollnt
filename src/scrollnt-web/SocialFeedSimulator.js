@@ -1,22 +1,11 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { VariableSizeList } from "react-window";
 
-import {
-  StatusBar,
-  useColorScheme,
-  View,
-  Image,
-  Dimensions,
-  AppState,
-} from "react-native-web";
+import { Image } from "react-native-web";
 import postRefs from "./postRefs";
-import { Masonry } from "@mui/lab";
 
 const SocialFeedSimulator = () => {
-  const snsSimulator = useRef();
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-
-  const [posts, setPosts] = useState(postRefs);
+  const [posts] = useState(postRefs);
 
   const headerHeight = ((window.innerWidth * 0.35) / 1125) * 182;
   const footerHeight = ((window.innerWidth * 0.35) / 1125) * 159;
