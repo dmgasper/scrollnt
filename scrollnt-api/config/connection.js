@@ -1,4 +1,4 @@
-import { getSecret } from "./keyvault";
+const getSecret = require("./keyvault");
 require("dotenv").config();
 
 async function putKeyVaultSecretInEnvVar() {

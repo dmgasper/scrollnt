@@ -1,5 +1,5 @@
-import { DefaultAzureCredential } from "@azure/identity";
-import { SecretClient } from "@azure/keyvault-secrets";
+const DefaultAzureCredential = require("@azure/identity");
+const SecretClient = require("@azure/keyvault-secrets");
 
 const getSecret = async (secretName, keyVaultName) => {
   if (!secretName || !keyVaultName) {

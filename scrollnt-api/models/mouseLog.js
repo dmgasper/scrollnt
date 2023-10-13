@@ -8,8 +8,9 @@ const mousePositionLog = new mongoose.Schema({
   mousePosition: {
     type: [
       {
-        date: Date,
-        position: { x: Number, y: Number },
+        date: { type: Date, required: true },
+        x: { type: Number, required: true },
+        y: { type: Number, required: true },
       },
     ],
     required: true,

@@ -14,7 +14,7 @@ router.post("/addMousePositionLog", function (req, res, next) {
     createDate: createDate,
     isExperimentGroup: isExperimentGroup,
     startDate: startDate,
-    endDate: endDate.Date.Date,
+    endDate: endDate,
     mousePosition: mousePosition,
   });
 
@@ -24,6 +24,7 @@ router.post("/addMousePositionLog", function (req, res, next) {
       res.status(201).send(mousePositionLog);
     })
     .catch((err) => {
+      console.log(mousePositionLog);
       res.send(err);
     });
 });
