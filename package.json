@@ -15,7 +15,7 @@
     "react-dom": "^18.2.0",
     "react-modal": "^3.16.1",
     "react-native-web": "^0.19.9",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "react-window": "^1.8.9",
     "web-vitals": "^2.1.4"
   },
