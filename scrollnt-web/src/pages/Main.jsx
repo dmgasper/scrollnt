@@ -4,14 +4,19 @@ import SocialFeedSimulator from "../scrollnt-web/SocialFeedSimulator";
 import dialog from "../res/dialog.png";
 import MouseTracker from "../utils/MouseTracker";
 
-const Main = ({ isExperimentGroup, setTrackMouse, setPage }) => {
+const Main = ({
+  isExperimentGroup,
+  setTrackMouse,
+  setPage,
+  setPublishTrackingData,
+}) => {
   const elementRef = useRef(null);
   const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
       if (isExperimentGroup) setShowPopup(true);
-    }, 30000);
+    }, 20000);
     return () => clearInterval(interval);
   });
 
@@ -21,7 +26,11 @@ const Main = ({ isExperimentGroup, setTrackMouse, setPage }) => {
         <div className="ScrollNT-embed" onClick={() => setShowPopup(false)}>
           {showPopup && <img alt="" src={dialog} className="Popup" />}
           <SocialFeedSimulator />
-          <MouseTracker setPage={setPage} />
+          <MouseTracker
+            setPage={setPage}
+            isExperimentGroup={isExperimentGroup}
+            setPublishTrackingData={setPublishTrackingData}
+          />
         </div>
         <div
           onMouseEnter={() => {

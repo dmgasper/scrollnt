@@ -18,7 +18,6 @@ const Header = ({ page, setPage, setTrackMouse, setPublishMouseData }) => {
         />
       )}
       <span className="Header-body">
-        <text className="Logo">Attention Activity</text>
         {page === "Start" && (
           <text className="Center" color="white">
             Select a button below to continue

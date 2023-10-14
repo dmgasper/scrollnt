@@ -34,6 +34,7 @@ const App = () => {
                 isExperimentGroup={isExperimentGroup}
                 setTrackMouse={setTrackMouse}
                 publishMouseData={publishMouseData}
+                setPublishTrackingData={setPublishMouseData}
               />
             )}
             {page === "Start" && (

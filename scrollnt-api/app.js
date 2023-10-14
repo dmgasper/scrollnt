@@ -7,6 +7,7 @@ var mongoose = require("mongoose");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var configData = require("./config/connection");
+const cors = require("cors");
 
 async function getApp() {
   // Database
@@ -25,6 +26,12 @@ async function getApp() {
   app.use(express.urlencoded({ extended: false }));
   app.use(cookieParser());
   app.use(express.static(path.join(__dirname, "public")));
+
+  app.use(
+    cors({
+      origin: "http://localhost:3000",
+    })
+  );
 
   app.use("/", indexRouter);
   app.use("/users", usersRouter);

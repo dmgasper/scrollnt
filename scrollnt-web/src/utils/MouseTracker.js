@@ -1,8 +1,16 @@
 import { useEffect, useState, useRef, useContext } from "react";
 import { MouseTrackContext, PublishMouseDataContext } from "../App";
 
-const MouseTracker = ({ setPage }) => {
+const MouseTracker = ({
+  setPage,
+  isExperimentGroup,
+  setPublishTrackingData,
+}) => {
   const [mouseData, setMouseData] = useState([]);
+  const [startDate, setStartDate] = useState("");
+
+  const currentStartDate = new Date().toISOString();
+  if (startDate == "") setStartDate(currentStartDate);
 
   const currentX = useRef(0);
   const currentY = useRef(0);
@@ -16,11 +24,32 @@ const MouseTracker = ({ setPage }) => {
 
   useEffect(() => {
     if (publishTrackingData) {
-      fetch(process.env.API_URL);
-      console.log("", mouseData);
-      setPage("End");
+      setPublishTrackingData(false);
+      const postData = async () => {
+        await fetch("http://localhost:3001/addMousePositionLog", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            isExperimentGroup: isExperimentGroup,
+            startDate: startDate,
+            endDate: new Date().toISOString(),
+            mousePosition: mouseData,
+          }),
+        }).then(() => {
+          setPage("End");
+        });
+      };
+
+      postData();
     }
-  });
+  }, [
+    isExperimentGroup,
+    mouseData,
+    publishTrackingData,
+    setPublishTrackingData,
+    startDate,
+    setPage,
+  ]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -31,20 +60,22 @@ const MouseTracker = ({ setPage }) => {
         y: ((currentY.current / windowHeight) * 1000).toFixed(0),
       };
 
-      setMouseData([
-        ...mouseData,
-        {
-          date: date,
-          x: mousePosition.x,
-          y: mousePosition.y,
-        },
-      ]);
-      if (trackMouse)
+      if (trackMouse) {
+        setMouseData([
+          ...mouseData,
+          {
+            date: date,
+            x: mousePosition.x,
+            y: mousePosition.y,
+          },
+        ]);
+
         console.log("", {
           date: date,
           x: mousePosition.x,
           y: mousePosition.y,
         });
+      }
     }, 250);
 
     return () => clearInterval(interval);

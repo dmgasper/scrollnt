@@ -4,6 +4,8 @@ const MousePositionLog = require("../models/mouseLog");
 const router = express.Router();
 
 router.post("/addMousePositionLog", function (req, res, next) {
+  console.log(req);
+
   const createDate = Date.now();
   const isExperimentGroup = req.body.isExperimentGroup;
   const startDate = req.body.startDate;

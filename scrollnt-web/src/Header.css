@@ -2,11 +2,6 @@
   width: 100vw;
 }
 
-.Logo {
-  float: inline-start;
-  padding-inline-start: 10px;
-}
-
 .Button {
   background-color: aliceblue;
   border: none;
