@@ -2,7 +2,7 @@ import "./Header.css";
 import EndTestModal from "./EndTestModal";
 import { useState } from "react";
 
-const Header = ({ page, setPage, setTrackMouse }) => {
+const Header = ({ page, setPage, setTrackMouse, setPublishMouseData }) => {
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -10,6 +10,7 @@ const Header = ({ page, setPage, setTrackMouse }) => {
       {showModal && (
         <EndTestModal
           setPage={setPage}
+          setPublishMouseData={setPublishMouseData}
           onClose={() => {
             setShowModal(false);
             setTrackMouse(true);

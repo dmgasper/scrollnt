@@ -1,7 +1,7 @@
 import { createPortal } from "react-dom";
 import "./Modal.css";
 
-const EndTestModal = ({ setPage, onClose }) =>
+const EndTestModal = ({ setPage, onClose, setPublishMouseData }) =>
   createPortal(
     <div className="modal">
       <div className="modal-content">
@@ -13,7 +13,7 @@ const EndTestModal = ({ setPage, onClose }) =>
           <button
             className="End-button"
             onClick={() => {
-              setPage("End");
+              setPublishMouseData(true);
               onClose();
             }}
           >
