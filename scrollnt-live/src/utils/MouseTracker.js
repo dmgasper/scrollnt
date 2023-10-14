@@ -10,7 +10,7 @@ const MouseTracker = ({
   const [startDate, setStartDate] = useState("");
 
   const currentStartDate = new Date().toISOString();
-  if (startDate == "") setStartDate(currentStartDate);
+  if (startDate === "") setStartDate(currentStartDate);
 
   const currentX = useRef(0);
   const currentY = useRef(0);
