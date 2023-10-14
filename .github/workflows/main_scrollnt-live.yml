@@ -27,6 +27,7 @@ jobs:
           npm install
           npm run build --if-present
           npm run test --if-present
+          cd ../
 
       - name: Copy build from scrollnt-live into views
         run: |
