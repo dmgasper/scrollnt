@@ -1,5 +1,5 @@
 const postRefs = [
-  { id: 47, image: require("./res/posts/47.png"), width: 1125, height: 1181 },
+  { id: 47, image: require("./res/posts/47.png"), width: 1125, height: 1300 },
   { id: 48, image: require("./res/posts/48.png"), width: 1125, height: 1845 },
   { id: 49, image: require("./res/posts/49.png"), width: 1125, height: 1878 },
   { id: 50, image: require("./res/posts/50.png"), width: 1125, height: 1686 },

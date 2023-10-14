@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { VariableSizeList } from "react-window";
-
-import { Image } from "react-native-web";
 import postRefs from "./postRefs";
 
 const SocialFeedSimulator = () => {
@@ -12,16 +10,28 @@ const SocialFeedSimulator = () => {
 
   const Row = ({ index, style }) => {
     return (
-      <Image style={style} source={posts[index].image} resizeMode="cover" />
+      <img
+        alt=""
+        style={style}
+        src={posts[index].image}
+        width={posts[index].width}
+        height={posts[index].height}
+      />
     );
   };
 
   return (
     <div>
-      <Image
-        source={require("./res/images/header.png")}
-        resizeMode="cover"
-        style={{ width: window.innerWidth * 0.35, height: headerHeight - 30 }}
+      <img
+        style={{
+          marginBottom: -7,
+          borderTopLeftRadius: 10,
+          borderTopRightRadius: 10,
+        }}
+        alt=""
+        src={require("./res/images/header.png")}
+        width={window.innerWidth * 0.35}
+        height={headerHeight - 30}
       />
 
       <VariableSizeList
@@ -36,12 +46,12 @@ const SocialFeedSimulator = () => {
         {Row}
       </VariableSizeList>
 
-      <Image
-        source={require("./res/images/footer.png")}
-        style={{
-          width: window.innerWidth * 0.35,
-          height: footerHeight,
-        }}
+      <img
+        alt=""
+        src={require("./res/images/footer.png")}
+        width={window.innerWidth * 0.35}
+        height={footerHeight}
+        style={{ borderBottomLeftRadius: 10, borderBottomRightRadius: 10 }}
       />
     </div>
   );
