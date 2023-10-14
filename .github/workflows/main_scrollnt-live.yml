@@ -52,20 +52,11 @@ jobs:
       - name: Unzip artifact for deployment
         run: unzip release.zip
 
-      - name: "Deploy API to Azure Web App"
-        id: deploy-api
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: "scrollnt-api"
-          slot-name: "Production"
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_AA307F0A47F44C1F85E60F0CE74D14EC }}
-          package: .scrollnt-api
-
       - name: "Deploy frontend Azure Web App"
         id: deploy-frontend
         uses: azure/webapps-deploy@v2
         with:
-          app-name: "scrollnt-web"
+          app-name: "scrollnt-live"
           slot-name: "Production"
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_AA307F0A47F44C1F85E60F0CE74D14EC }}
-          package: .scrollnt-web
+          package: .
