@@ -5,9 +5,9 @@
  */
 
 var { getApp } = require("../app");
-var debug = require("debug")("scrollnt-api:server");
 var http = require("http");
 require("dotenv").config();
+var debug = require("debug");
 
 /**
  * Get port from environment and store in Express.
