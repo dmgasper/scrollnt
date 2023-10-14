@@ -23,9 +23,14 @@ jobs:
 
       - name: npm install, build, and test
         run: |
+          cd ./scrollnt-live
           npm install
           npm run build --if-present
           npm run test --if-present
+
+      - name: Copy build from scrollnt-live into views
+        run: |
+          cp -r ./scrollnt-live/build/* ./scrollnt/views
 
       - name: Zip artifact for deployment
         run: zip release.zip ./* -r
