@@ -22,7 +22,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-/scrollnt-api/node_modules
+/scrollnt/node_modules
+/scrollnt/views/*
 /scrollnt-live/node_modules
 
 /scrollnt-live/build
