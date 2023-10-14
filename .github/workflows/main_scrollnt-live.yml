@@ -50,7 +50,7 @@ jobs:
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
-          app-name: 'scrollnt-live'
-          slot-name: 'Production'
+          app-name: "scrollnt-live"
+          slot-name: "Production"
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FBD13C0D29B14D88BF8FD87E3B02F753 }}
           package: .
