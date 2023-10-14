@@ -31,7 +31,7 @@ const Header = ({ page, setPage, setTrackMouse, setPublishMouseData }) => {
             }}
             className="Button"
           >
-            Click here when Qualtrics is Submitted
+            Click here after Qualtrics is Submitted
           </button>
         )}
       </span>
