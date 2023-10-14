@@ -24,4 +24,5 @@ yarn-error.log*
 
 /scrollnt-api/node_modules
 
-*.env
+*/.env
+.env
