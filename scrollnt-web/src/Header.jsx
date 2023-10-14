@@ -2,7 +2,7 @@ import "./Header.css";
 import EndTestModal from "./EndTestModal";
 import { useState } from "react";
 
-const Header = ({ page, setPage, setTrackMouse }) => {
+const Header = ({ page, setPage, setTrackMouse, setPublishMouseData }) => {
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -10,6 +10,7 @@ const Header = ({ page, setPage, setTrackMouse }) => {
       {showModal && (
         <EndTestModal
           setPage={setPage}
+          setPublishMouseData={setPublishMouseData}
           onClose={() => {
             setShowModal(false);
             setTrackMouse(true);
@@ -17,7 +18,6 @@ const Header = ({ page, setPage, setTrackMouse }) => {
         />
       )}
       <span className="Header-body">
-        <text className="Logo">Attention Activity</text>
         {page === "Start" && (
           <text className="Center" color="white">
             Select a button below to continue

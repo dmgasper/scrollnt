@@ -23,3 +23,9 @@ yarn-debug.log*
 yarn-error.log*
 
 /scrollnt-api/node_modules
+/scrollnt-web/node_modules
+
+/scrollnt-web/build
+
+*/.env
+.env

@@ -4,26 +4,33 @@ import SocialFeedSimulator from "../scrollnt-web/SocialFeedSimulator";
 import dialog from "../res/dialog.png";
 import MouseTracker from "../utils/MouseTracker";
 
-const Main = ({ isExperimentGroup, setTrackMouse }) => {
-  // https://timetoprogram.com/get-width-of-element-react-js/
-  // https://www.geeksforgeeks.org/how-to-determine-the-size-of-a-component-in-reactjs/
+const Main = ({
+  isExperimentGroup,
+  setTrackMouse,
+  setPage,
+  setPublishTrackingData,
+}) => {
   const elementRef = useRef(null);
   const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
       if (isExperimentGroup) setShowPopup(true);
-    }, 5000);
+    }, 20000);
     return () => clearInterval(interval);
   });
 
   return (
     <body>
       <div id="Main-body" className="Main-body" ref={elementRef}>
-        <MouseTracker />
         <div className="ScrollNT-embed" onClick={() => setShowPopup(false)}>
           {showPopup && <img alt="" src={dialog} className="Popup" />}
           <SocialFeedSimulator />
+          <MouseTracker
+            setPage={setPage}
+            isExperimentGroup={isExperimentGroup}
+            setPublishTrackingData={setPublishTrackingData}
+          />
         </div>
         <div
           onMouseEnter={() => {
