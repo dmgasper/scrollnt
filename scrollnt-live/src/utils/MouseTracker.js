@@ -26,7 +26,7 @@ const MouseTracker = ({
     if (publishTrackingData) {
       setPublishTrackingData(false);
       const postData = async () => {
-        await fetch("http://localhost:8080/addMousePositionLog", {
+        await fetch("https://scrollnt.azurewebsites.net/addMousePositionLog", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({

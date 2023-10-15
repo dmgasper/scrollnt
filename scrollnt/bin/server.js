@@ -6,7 +6,6 @@
 
 import app from "../app.js";
 import { createServer } from "http";
-import { configDotenv } from "dotenv";
 import debug from "debug";
 
 /**
@@ -14,7 +13,6 @@ import debug from "debug";
  */
 
 app().then((app) => {
-  configDotenv();
   var port = normalizePort(process.env.PORT || "3000");
   app.set("port", port);
 

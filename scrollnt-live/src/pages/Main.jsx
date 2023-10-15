@@ -26,7 +26,7 @@ const Main = ({
           {showPopup && (
             <img
               alt=""
-              src="http://localhost:8080/images/dialog.png"
+              src="https://scrollnt.azurewebsites.net/images/dialog.png"
               className="Popup"
             />
           )}
