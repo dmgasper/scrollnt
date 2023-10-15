@@ -33,7 +33,9 @@ jobs:
           cp -r ./scrollnt-live/build/* ./scrollnt/views
 
       - name: Bundle artifact for deployment
-        run: ren . "release.bundle"
+        run: |
+          cd ..
+          ren "attention-test" "release.bundle"
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
@@ -67,4 +69,3 @@ jobs:
           slot-name: "Production"
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FBD13C0D29B14D88BF8FD87E3B02F753 }}
           package: .
-          
