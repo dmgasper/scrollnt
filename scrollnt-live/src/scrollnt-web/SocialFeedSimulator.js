@@ -29,7 +29,7 @@ const SocialFeedSimulator = () => {
           borderTopRightRadius: 10,
         }}
         alt=""
-        src={require("./res/images/header.png")}
+        src={"http://localhost:8080/images/header.png"}
         width={window.innerWidth * 0.35}
         height={headerHeight - 30}
       />
@@ -48,7 +48,7 @@ const SocialFeedSimulator = () => {
 
       <img
         alt=""
-        src={require("./res/images/footer.png")}
+        src={"http://localhost:8080/images/footer.png"}
         width={window.innerWidth * 0.35}
         height={footerHeight}
         style={{ borderBottomLeftRadius: 10, borderBottomRightRadius: 10 }}

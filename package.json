@@ -1,10 +1,11 @@
 {
-  "name": "scrollnt-api",
+  "name": "scrollnt",
   "version": "0.0.0",
+  "type": "module",
   "private": true,
   "scripts": {
-    "start": "node ./scrollnt/bin/www",
-    "debug": "DEBUG=* node ./scrollnt/bin/www"
+    "start": "node ./scrollnt/bin/server.js",
+    "debug": "DEBUG=* node ./scrollnt/bin/server.js"
   },
   "dependencies": {
     "debug": "^4.3.4",

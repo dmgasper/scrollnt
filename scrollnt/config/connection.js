@@ -1,8 +1,9 @@
-require("dotenv").config();
+import { configDotenv } from "dotenv";
 
 async function getConnectionInfo() {
-    if (!process.env.DATABASE_URL)
-      throw new Error("No value in DATABASE_URL in env var");
+  configDotenv();
+  if (!process.env.DATABASE_URL)
+    throw new Error("No value in DATABASE_URL in env var");
 
   return {
     DATABASE_URL: process.env.DATABASE_URL,
@@ -10,6 +11,4 @@ async function getConnectionInfo() {
   };
 }
 
-module.exports = {
-  getConnectionInfo,
-};
+export { getConnectionInfo };

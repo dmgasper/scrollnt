@@ -4,16 +4,17 @@
  * Module dependencies.
  */
 
-var { getApp } = require("../app");
-var http = require("http");
-require("dotenv").config();
-var debug = require("debug");
+import app from "../app.js";
+import { createServer } from "http";
+import { configDotenv } from "dotenv";
+import debug from "debug";
 
 /**
  * Get port from environment and store in Express.
  */
 
-getApp().then((app) => {
+app().then((app) => {
+  configDotenv();
   var port = normalizePort(process.env.PORT || "3000");
   app.set("port", port);
 
@@ -21,7 +22,7 @@ getApp().then((app) => {
    * Create HTTP server.
    */
 
-  var server = http.createServer(app);
+  var server = createServer(app);
 
   /**
    * Listen on provided port, on all network interfaces.

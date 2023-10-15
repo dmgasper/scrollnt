@@ -1,0 +1,9 @@
+{
+  "appService.zipIgnorePattern": [
+    "node_modules{,/**}",
+    ".vscode{,/**}",
+    "scrollnt-live{,/**}"
+  ],
+  "appService.defaultWebAppToDeploy": "",
+  "appService.deploySubpath": "."
+}

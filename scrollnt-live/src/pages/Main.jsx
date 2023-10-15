@@ -1,7 +1,6 @@
 import "./Main.css";
 import { useEffect, useState, useRef } from "react";
 import SocialFeedSimulator from "../scrollnt-web/SocialFeedSimulator";
-import dialog from "../res/dialog.png";
 import MouseTracker from "../utils/MouseTracker";
 
 const Main = ({
@@ -24,7 +23,13 @@ const Main = ({
     <body>
       <div id="Main-body" className="Main-body" ref={elementRef}>
         <div className="ScrollNT-embed" onClick={() => setShowPopup(false)}>
-          {showPopup && <img alt="" src={dialog} className="Popup" />}
+          {showPopup && (
+            <img
+              alt=""
+              src="http://localhost:8080/images/dialog.png"
+              className="Popup"
+            />
+          )}
           <SocialFeedSimulator />
           <MouseTracker
             setPage={setPage}

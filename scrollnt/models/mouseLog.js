@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
+import { Schema, model } from "mongoose";
 
-const mousePositionLog = new mongoose.Schema({
+const mousePositionLog = new Schema({
   createDate: { type: Date, required: true },
   isExperimentGroup: { type: Boolean, required: true },
   startDate: { type: Date, required: true },
@@ -17,4 +17,4 @@ const mousePositionLog = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("MousePositionLog", mousePositionLog);
+export default model("MousePositionLog", mousePositionLog);

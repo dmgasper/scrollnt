@@ -1,21 +1,21 @@
-var express = require("express");
-var mongoose = require("mongoose");
-var indexRouter = require("./routes/index");
-var configData = require("./config/connection");
+import express, { json, urlencoded, static as staticc } from "express";
+import { connect } from "mongoose";
+import indexRouter from "./routes/index.js";
+import { getConnectionInfo } from "./config/connection.js";
 
-async function getApp() {
+const app = async () => {
   // Database
-  var connectionInfo = await configData.getConnectionInfo();
-  mongoose.connect(connectionInfo.DATABASE_URL, {
+  var connectionInfo = await getConnectionInfo();
+  connect(connectionInfo.DATABASE_URL, {
     dbName: connectionInfo.DATABASE_NAME,
   });
 
-  const path = __dirname + "/views/";
+  const path = process.cwd() + "/scrollnt/views/";
   const app = express();
 
-  app.use(express.json());
-  app.use(express.urlencoded({ extended: false }));
-  app.use(express.static(path));
+  app.use(json());
+  app.use(urlencoded({ extended: false }));
+  app.use(staticc(path));
 
   app.use("/", indexRouter);
 
@@ -37,6 +37,6 @@ async function getApp() {
   });
 
   return app;
-}
+};
 
-module.exports = { getApp };
+export default app;

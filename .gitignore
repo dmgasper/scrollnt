@@ -23,7 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 /scrollnt/node_modules
-/scrollnt/views/*
 /scrollnt-live/node_modules
 
 /scrollnt-live/build
