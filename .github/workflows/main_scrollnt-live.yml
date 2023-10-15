@@ -32,11 +32,14 @@ jobs:
           mkdir ./scrollnt/views
           cp -r ./scrollnt-live/build/* ./scrollnt/views
 
+      - name: Bundle artifact for deployment
+        run: ren . "release.bundle"
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
           name: node-app
-          path: .
+          path: release.bundle
 
   deploy:
     runs-on: ubuntu-latest
@@ -51,6 +54,11 @@ jobs:
         with:
           name: node-app
 
+      - name: Unbundle artifact for deployment
+        run: |
+          mv release.bundle release
+          cd release
+
       - name: "Deploy frontend Azure Web App"
         id: deploy-frontend
         uses: azure/webapps-deploy@v2
@@ -59,3 +67,4 @@ jobs:
           slot-name: "Production"
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FBD13C0D29B14D88BF8FD87E3B02F753 }}
           package: .
+          
