@@ -69,12 +69,6 @@ const MouseTracker = ({
             y: mousePosition.y,
           },
         ]);
-
-        console.log("", {
-          date: date,
-          x: mousePosition.x,
-          y: mousePosition.y,
-        });
       }
     }, 250);
 
