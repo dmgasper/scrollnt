@@ -5,11 +5,15 @@
   "private": true,
   "scripts": {
     "start": "node ./scrollnt/bin/server.js",
-    "debug": "DEBUG=* node ./scrollnt/bin/server.js"
+    "debug": "DEBUG=* node ./scrollnt/bin/server.js",
+    "dev": "NODE_ENV=development node ./scrollnt/bin/server.js"
   },
   "dependencies": {
     "debug": "^4.3.4",
     "express": "~4.16.1",
     "mongoose": "^7.6.2"
+  },
+  "devDependencies": {
+    "dotenv": "^16.3.1"
   }
 }

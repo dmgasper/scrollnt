@@ -1,5 +1,10 @@
 {
-  "appService.zipIgnorePattern": [".vscode{,/**}", ".scrollnt-live{,/**}"],
+  "appService.zipIgnorePattern": [
+    ".vscode{,/**}",
+    ".scrollnt-live{,/**}",
+    "node_modules{,/**}"
+  ],
   "appService.defaultWebAppToDeploy": "/subscriptions/8d240a57-a1ef-4f08-a749-d24ce46cd26a/resourceGroups/scrollnt_group-9dd7/providers/Microsoft.Web/sites/scrollnt",
-  "appService.deploySubpath": "."
+  "appService.deploySubpath": "scrollnt.zip",
+  "appService.showBuildDuringDeployPrompt": false
 }
