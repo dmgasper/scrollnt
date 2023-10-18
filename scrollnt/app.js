@@ -10,12 +10,14 @@ const app = async () => {
     dbName: connectionInfo.DATABASE_NAME,
   });
 
-  const path = process.cwd() + "/scrollnt/views/";
+  const path = process.cwd() + "/scrollnt/";
+
   const app = express();
 
   app.use(express.json());
   app.use(express.urlencoded({ extended: false }));
-  app.use(express.static(path));
+  app.use(express.static(path + "views"));
+  app.use("/images", express.static(path + "images"));
 
   app.use("/", indexRouter);
 
