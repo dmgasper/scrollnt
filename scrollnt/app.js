@@ -1,6 +1,6 @@
 const express = require("express");
-const indexRouter = require("../routes/index.js");
-const getConnectionInfo = require("../config/connection.js");
+const indexRouter = require("./routes/index.js");
+const getConnectionInfo = require("./config/connection.js");
 const mongoose = require("mongoose");
 
 const app = async () => {
