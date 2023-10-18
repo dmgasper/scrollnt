@@ -1,7 +1,6 @@
 {
   "name": "scrollnt",
   "version": "0.0.0",
-  "type": "module",
   "private": true,
   "scripts": {
     "start": "node ./scrollnt/bin/server.js",
@@ -11,6 +10,7 @@
   "dependencies": {
     "debug": "^4.3.4",
     "express": "~4.16.1",
+    "http": "^0.0.1-security",
     "mongoose": "^7.6.2"
   },
   "devDependencies": {

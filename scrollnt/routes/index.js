@@ -1,5 +1,5 @@
-import express from "express";
-import MousePositionLog from "../models/mouseLog.js";
+const express = require("express");
+const MousePositionLog = require("../models/mouseLog.js");
 
 const router = express.Router();
 
@@ -31,4 +31,4 @@ router.post("/addMousePositionLog", function (req, res, next) {
     });
 });
 
-export default router;
+module.exports = router;

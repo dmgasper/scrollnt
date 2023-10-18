@@ -1,21 +1,21 @@
-import express, { json, urlencoded, static as staticc } from "express";
-import { connect } from "mongoose";
-import indexRouter from "./routes/index.js";
-import { getConnectionInfo } from "./config/connection.js";
+const express = require("express");
+const indexRouter = require("../routes/index.js");
+const getConnectionInfo = require("../config/connection.js");
+const mongoose = require("mongoose");
 
 const app = async () => {
   // Database
   var connectionInfo = await getConnectionInfo();
-  connect(connectionInfo.DATABASE_URL, {
+  mongoose.connect(connectionInfo.DATABASE_URL, {
     dbName: connectionInfo.DATABASE_NAME,
   });
 
   const path = process.cwd() + "/scrollnt/views/";
   const app = express();
 
-  app.use(json());
-  app.use(urlencoded({ extended: false }));
-  app.use(staticc(path));
+  app.use(express.json());
+  app.use(express.urlencoded({ extended: false }));
+  app.use(express.static(path));
 
   app.use("/", indexRouter);
 
@@ -39,4 +39,4 @@ const app = async () => {
   return app;
 };
 
-export default app;
+module.exports = app;

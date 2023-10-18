@@ -5,6 +5,6 @@
     "node_modules{,/**}"
   ],
   "appService.defaultWebAppToDeploy": "/subscriptions/8d240a57-a1ef-4f08-a749-d24ce46cd26a/resourceGroups/scrollnt_group-9dd7/providers/Microsoft.Web/sites/scrollnt",
-  "appService.deploySubpath": "scrollnt.zip",
+  "appService.deploySubpath": "scrollnt",
   "appService.showBuildDuringDeployPrompt": false
 }

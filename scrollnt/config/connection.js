@@ -1,7 +1,7 @@
-import { configDotenv } from "dotenv";
+const dotenv = require("dotenv");
 
 if (process.env.NODE_ENV == "development") {
-  configDotenv();
+  dotenv.configDotenv();
 }
 
 async function getConnectionInfo() {
@@ -14,4 +14,4 @@ async function getConnectionInfo() {
   };
 }
 
-export { getConnectionInfo };
+module.exports = getConnectionInfo;
