@@ -61,6 +61,7 @@ const MouseTracker = ({
       };
 
       if (trackMouse) {
+        console.log("Tracking Mouse");
         setMouseData([
           ...mouseData,
           {

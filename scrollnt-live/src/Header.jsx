@@ -20,7 +20,7 @@ const Header = ({ page, setPage, setTrackMouse, setPublishMouseData }) => {
       <span className="Header-body">
         {page === "Start" && (
           <text className="Center" color="white">
-            Select a button below to continue
+            Wait for staff to select a button
           </text>
         )}
         {page === "Main" && (

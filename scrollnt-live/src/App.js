@@ -12,7 +12,7 @@ const PublishMouseDataContext = createContext(null);
 const App = () => {
   const [page, setPage] = useState("Start");
   const [isExperimentGroup, setIsExperimentGroup] = useState("");
-  const [trackMouse, setTrackMouse] = useState(true);
+  const [trackMouse, setTrackMouse] = useState(false);
   const [publishMouseData, setPublishMouseData] = useState(false);
 
   return (

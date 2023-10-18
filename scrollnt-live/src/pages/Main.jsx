@@ -2,6 +2,7 @@ import "./Main.css";
 import { useEffect, useState, useRef } from "react";
 import SocialFeedSimulator from "../scrollnt-web/SocialFeedSimulator";
 import MouseTracker from "../utils/MouseTracker";
+import StartModal from "../StartModal";
 
 const Main = ({
   isExperimentGroup,
@@ -11,6 +12,7 @@ const Main = ({
 }) => {
   const elementRef = useRef(null);
   const [showPopup, setShowPopup] = useState(false);
+  const [showStartModal, setShowStartModal] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -23,6 +25,21 @@ const Main = ({
     <body>
       <div id="Main-body" className="Main-body" ref={elementRef}>
         <div className="ScrollNT-embed" onClick={() => setShowPopup(false)}>
+          {showStartModal ? (
+            <StartModal
+              setTrackMouse={setTrackMouse}
+              onClose={() => setShowStartModal(false)}
+            />
+          ) : (
+            <>
+              <SocialFeedSimulator />
+              <MouseTracker
+                setPage={setPage}
+                isExperimentGroup={isExperimentGroup}
+                setPublishTrackingData={setPublishTrackingData}
+              />
+            </>
+          )}
           {showPopup && (
             <img
               alt=""
@@ -30,12 +47,6 @@ const Main = ({
               className="Popup"
             />
           )}
-          <SocialFeedSimulator />
-          <MouseTracker
-            setPage={setPage}
-            isExperimentGroup={isExperimentGroup}
-            setPublishTrackingData={setPublishTrackingData}
-          />
         </div>
         <div
           onMouseEnter={() => {
