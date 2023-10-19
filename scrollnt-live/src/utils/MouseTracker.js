@@ -35,7 +35,8 @@ const MouseTracker = ({
             endDate: new Date().toISOString(),
             mousePosition: mouseData,
           }),
-        }).then(() => {
+        }).then((res) => {
+          console.log(res);
           setPage("End");
         });
       };
@@ -61,7 +62,7 @@ const MouseTracker = ({
       };
 
       if (trackMouse) {
-        console.log("Tracking Mouse");
+        console.log(mouseData);
         setMouseData([
           ...mouseData,
           {

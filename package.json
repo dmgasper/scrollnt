@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node ./scrollnt/bin/server.js",
     "debug": "DEBUG=* node ./scrollnt/bin/server.js",
-    "dev": "NODE_ENV=development node ./scrollnt/bin/server.js",
+    "dev": "DEBUG=* NODE_ENV=development node ./scrollnt/bin/server.js",
     "local-build": "./build.sh"
   },
   "dependencies": {

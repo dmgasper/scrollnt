@@ -32,20 +32,13 @@ const Main = ({
             />
           ) : (
             <>
-              <SocialFeedSimulator />
               <MouseTracker
                 setPage={setPage}
                 isExperimentGroup={isExperimentGroup}
                 setPublishTrackingData={setPublishTrackingData}
               />
+              <SocialFeedSimulator showPopup={showPopup}/>
             </>
-          )}
-          {showPopup && (
-            <img
-              alt=""
-              src="https://scrollnt.azurewebsites.net/images/dialog.png"
-              className="Popup"
-            />
           )}
         </div>
         <div

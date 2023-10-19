@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { VariableSizeList } from "react-window";
 import postRefs from "./postRefs";
 
-const SocialFeedSimulator = () => {
+const SocialFeedSimulator = ({ showPopup }) => {
   const [posts] = useState(postRefs);
 
   const headerHeight = ((window.innerWidth * 0.35) / 1125) * 182;
@@ -53,6 +53,15 @@ const SocialFeedSimulator = () => {
         height={footerHeight}
         style={{ borderBottomLeftRadius: 10, borderBottomRightRadius: 10 }}
       />
+      {showPopup && (
+        <img
+          alt=""
+          src="https://scrollnt.azurewebsites.net/images/dialog.png"
+          width={window.innerWidth * 0.35}
+          height={window.innerHeight * 0.7}
+          style={{ position: "absolute", top: "14vh", left: "2.5vw" }}
+        />
+      )}
     </div>
   );
 };
