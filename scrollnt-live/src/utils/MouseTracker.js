@@ -3,6 +3,7 @@ import { MouseTrackContext, PublishMouseDataContext } from "../App";
 
 const MouseTracker = ({
   setPage,
+  initials,
   isExperimentGroup,
   setPublishTrackingData,
 }) => {
@@ -26,24 +27,41 @@ const MouseTracker = ({
     if (publishTrackingData) {
       setPublishTrackingData(false);
       const postData = async () => {
-        await fetch("https://scrollnt.azurewebsites.net/addMousePositionLog", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            isExperimentGroup: isExperimentGroup,
-            startDate: startDate,
-            endDate: new Date().toISOString(),
-            mousePosition: mouseData,
-          }),
-        }).then((res) => {
-          console.log(res);
-          setPage("End");
-        });
+        await fetch(
+          (process.env.NODE_ENV === "development"
+            ? "http://localhost:8080"
+            : "https://scrollnt.azurewebsites.net"
+          ).concat("/addMousePositionLog"),
+
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              initials: initials,
+              isExperimentGroup: isExperimentGroup,
+              startDate: startDate,
+              endDate: new Date().toISOString(),
+              mousePosition: mouseData,
+            }),
+          }
+        )
+          .then((res) => {
+            console.log(res);
+            if (res.status === 201) {
+              setPage("End");
+            } else {
+              setPage("Error");
+            }
+          })
+          .catch(() => {
+            setPage("Error");
+          });
       };
 
       postData();
     }
   }, [
+    initials,
     isExperimentGroup,
     mouseData,
     publishTrackingData,

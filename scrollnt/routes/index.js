@@ -7,6 +7,7 @@ router.post("/addMousePositionLog", function (req, res, next) {
   console.log(req);
 
   const createDate = Date.now();
+  const initials = req.body.initials;
   const isExperimentGroup = req.body.isExperimentGroup;
   const startDate = req.body.startDate;
   const endDate = req.body.endDate;
@@ -14,6 +15,7 @@ router.post("/addMousePositionLog", function (req, res, next) {
 
   const mousePositionLog = new MousePositionLog({
     createDate: createDate,
+    initials: initials,
     isExperimentGroup: isExperimentGroup,
     startDate: startDate,
     endDate: endDate,

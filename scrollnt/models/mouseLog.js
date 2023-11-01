@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const mousePositionLog = new mongoose.Schema({
   createDate: { type: Date, required: true },
+  initials: { type: String, required: true },
   isExperimentGroup: { type: Boolean, required: true },
   startDate: { type: Date, required: true },
   endDate: { type: Date, required: true },

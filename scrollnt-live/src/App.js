@@ -5,12 +5,14 @@ import Header from "./Header";
 import Start from "./pages/Start";
 import End from "./pages/End";
 import Main from "./pages/Main";
+import Error from "./pages/Error";
 
 const MouseTrackContext = createContext(null);
 const PublishMouseDataContext = createContext(null);
 
 const App = () => {
   const [page, setPage] = useState("Start");
+  const [initials, setInitials] = useState("");
   const [isExperimentGroup, setIsExperimentGroup] = useState("");
   const [trackMouse, setTrackMouse] = useState(false);
   const [publishMouseData, setPublishMouseData] = useState(false);
@@ -31,6 +33,7 @@ const App = () => {
             {page === "Main" && (
               <Main
                 setPage={setPage}
+                initials={initials}
                 isExperimentGroup={isExperimentGroup}
                 setTrackMouse={setTrackMouse}
                 publishMouseData={publishMouseData}
@@ -40,10 +43,13 @@ const App = () => {
             {page === "Start" && (
               <Start
                 setPage={setPage}
+                setInitials={setInitials}
+                setTrackMouse={setTrackMouse}
                 setIsExperimentGroup={setIsExperimentGroup}
               />
             )}
             {page === "End" && <End />}
+            {page === "Error" && <Error />}
           </body>
         </div>
       </PublishMouseDataContext.Provider>

@@ -3,8 +3,10 @@ import { useEffect, useState, useRef } from "react";
 import SocialFeedSimulator from "../scrollnt-web/SocialFeedSimulator";
 import MouseTracker from "../utils/MouseTracker";
 import StartModal from "../StartModal";
+import StudyContent from "../StudyContent";
 
 const Main = ({
+  initials,
   isExperimentGroup,
   setTrackMouse,
   setPage,
@@ -12,7 +14,7 @@ const Main = ({
 }) => {
   const elementRef = useRef(null);
   const [showPopup, setShowPopup] = useState(false);
-  const [showStartModal, setShowStartModal] = useState(true);
+  const [showStartModal, setShowStartModal] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -34,30 +36,15 @@ const Main = ({
             <>
               <MouseTracker
                 setPage={setPage}
+                initials={initials}
                 isExperimentGroup={isExperimentGroup}
                 setPublishTrackingData={setPublishTrackingData}
               />
-              <SocialFeedSimulator showPopup={showPopup}/>
+              <SocialFeedSimulator showPopup={showPopup} />
             </>
           )}
         </div>
-        <div
-          onMouseEnter={() => {
-            console.log("Interacting with Qualtrics");
-            setTrackMouse(false);
-          }}
-          onMouseLeave={() => {
-            console.log("Leaving Qualtrics");
-            setTrackMouse(true);
-          }}
-        >
-          <iframe
-            id="Qualtrics-Embed"
-            title="Qualtrics-Embed"
-            className="Qualtrics-embed"
-            src="https://oregonstate.qualtrics.com/jfe/form/SV_ePOX9Mk6MNB3JiK"
-          ></iframe>
-        </div>
+        <StudyContent />
       </div>
     </body>
   );

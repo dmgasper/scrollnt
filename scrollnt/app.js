@@ -14,6 +14,15 @@ const app = async () => {
 
   const app = express();
 
+  // Allow front-end origin in development mode
+  if (app.get("env") === "development") {
+    const cors = require("cors");
+    const corsOptions = {
+      origins: "http://localhost:8080",
+    };
+    app.use(cors(corsOptions));
+  }
+
   app.use(express.json());
   app.use(express.urlencoded({ extended: false }));
   app.use(express.static(path + "views"));

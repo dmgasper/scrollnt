@@ -1,13 +1,13 @@
 import { createPortal } from "react-dom";
 import "./Modal.css";
 
-const EndTestModal = ({ setPage, onClose, setPublishMouseData }) =>
+const EndTestModal = ({ onClose, setPublishMouseData }) =>
   createPortal(
     <div className="modal">
       <div className="modal-content">
         <div>
-          Are you sure you are done? Click cancel unless you mean to be done and
-          you have clicked "submit" on the Qualtrics survey.
+          Are you sure you are done? Click cancel unless you really are done
+          reading and ready to submit your data
         </div>
         <div className="button-row">
           <button
