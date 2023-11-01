@@ -51,7 +51,7 @@ const StudyContent = () => (
     <img
       alt=""
       width="100%"
-      src={"http://localhost:8080/images/phasediagram.jpg"}
+      src={"https://scrollnt.azurewebsites.net/images/phasediagram.jpg"}
     />
     <p>
       &emsp; The primary result of mitosis and cytokinesis is the transfer of a
@@ -201,7 +201,7 @@ const StudyContent = () => (
     <img
       alt=""
       width="100%"
-      src={"http://localhost:8080/images/cytokinesis.png"}
+      src={"https://scrollnt.azurewebsites.net/images/cytokinesis.png"}
     />
     <p>
       &emsp; Cytokinesis is not a phase of mitosis, but rather a separate
