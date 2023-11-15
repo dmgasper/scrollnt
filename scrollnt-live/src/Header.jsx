@@ -31,7 +31,8 @@ const Header = ({ page, setPage, setTrackMouse, setPublishMouseData }) => {
             }}
             className="Button"
           >
-            Click when done reading and ready to submit data
+            When you are done reading, (1) click here to submit your data and
+            then (2) close the window
           </button>
         )}
       </span>
